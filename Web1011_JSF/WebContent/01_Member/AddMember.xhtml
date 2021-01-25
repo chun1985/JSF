@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>  
+        <title>會員註冊</title>  
+    </h:head>  
+    <h:body>  
+        <h:form id="form">  
+            <table>  
+                <tr>  
+                    <td><h:outputLabel for="membername">姓名:</h:outputLabel></td>  
+                    <td><h:inputText id="name-id" value="#{member.name}">
+                        <f:validateLength minimum="2" maximum="10" />
+                        </h:inputText>
+                    </td>  
+                </tr>  
+                <tr>  
+                    <td><h:outputLabel for="email">Email:</h:outputLabel></td>  
+                    <td><h:inputText id="email-id" value="#{member.email}"/></td>  
+                </tr>  
+                <tr>  
+                    <td><h:outputLabel for="password">密碼:</h:outputLabel></td>  
+                    <td><h:inputSecret id="password-id" value="#{member.password}"/></td>  
+                </tr>  
+
+                <tr>  
+                    <td><h:outputLabel for="sex">性別:</h:outputLabel></td>  
+                    <td><h:selectOneRadio value="#{member.sex}">  
+                            <f:selectItem itemValue="男" itemLabel="男" />  
+                            <f:selectItem itemValue="女" itemLabel="女" />  
+                        </h:selectOneRadio></td>  
+             
+                </tr>  
+                <tr><td><h:outputLabel for="address">地址:</h:outputLabel></td>  
+                    <td><h:inputTextarea value="#{member.address}" cols="50" rows="5"/></td></tr>  
+            </table>  
+            <h:commandButton value="送出" action="ShowMember.xhtml"></h:commandButton>  
+        </h:form>  
+    </h:body>
+</html>
+
